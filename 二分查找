@@ -1,0 +1,25 @@
+################################################################
+#程序是使用二分查找法，在有序数列或字符串列表中查找指定数字或字符，     #
+#如果序列长度为n，那么需要查找log(n)次。                           #
+################################################################
+def search_element(list,item):       #list是指定序列，item是待查找元素
+    #low和high表示list的首末端序号
+    low = 0
+    high = len(list) - 1
+
+    while low <= high:                          #保证列表元素多于个
+        mid = int((low + high) / 2)             #确定中间值的下标，不是整数时向下取整，例如1.5取1
+        mid_num = list[mid]
+        if mid_num == item:
+            return mid
+        if mid_num > item:
+            high = mid - 1
+        else:
+            low = mid + 1
+    return None
+
+print(search_element([7,8,9,23,45,67,78,89,90],45))
+
+
+#输出：
+4
