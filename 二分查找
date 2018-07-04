@@ -7,7 +7,7 @@ def search_element(list,item):       #list是指定序列，item是待查找元�
     low = 0
     high = len(list) - 1
 
-    while low <= high:                          #保证列表元素多于个
+    while low <= high:                          #保证列表元素多于1个
         mid = int((low + high) / 2)             #确定中间值的下标，不是整数时向下取整，例如1.5取1
         mid_num = list[mid]
         if mid_num == item:
